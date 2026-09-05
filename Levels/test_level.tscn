@@ -2,6 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://cx4dfjr385k11" path="res://Entities/player.tscn" id="1_ormqy"]
 [ext_resource type="PackedScene" uid="uid://jpaw2dqiy26u" path="res://UI/touch_controls.tscn" id="2_00vsl"]
+[ext_resource type="PackedScene" uid="uid://bpm15kcgc0msu" path="res://Entities/sample_enemy.tscn" id="3_4k50d"]
 
 [node name="TestLevel" type="Node2D" unique_id=1882744241]
 
@@ -9,3 +10,6 @@
 position = Vector2(560, 333)
 
 [node name="TouchControls" parent="." unique_id=1720360131 instance=ExtResource("2_00vsl")]
+
+[node name="SampleEnemy" parent="." unique_id=823218055 instance=ExtResource("3_4k50d")]
+position = Vector2(950, 260)

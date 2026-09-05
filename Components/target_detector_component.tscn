@@ -2,5 +2,5 @@
 
 [ext_resource type="Script" uid="uid://cxnkuwhsmqshp" path="res://Components/Scripts/target_detector_component.gd" id="1_568vc"]
 
-[node name="TargetDetectorComponent" type="Node2D" unique_id=167282782]
+[node name="TargetDetectorComponent" type="Area2D" unique_id=1298262147]
 script = ExtResource("1_568vc")

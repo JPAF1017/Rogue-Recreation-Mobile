@@ -4,7 +4,7 @@ extends Area2D
 signal target_changed(new_target: Node2D)
 
 @export var visual_to_rotate: Node2D
-@export var rotation_speed: float = 0.0
+@export var rotation_speed: float = 9.0
 @export var toggle_rotation: bool = true
 
 var current_target: Node2D = null
@@ -21,7 +21,7 @@ func _process(delta: float) -> void:
 
 
 func _on_body_entered(body: Node2D) -> void:
-	if body != get_parent() and not _targets_in_range.has(body) and toggle_rotation == true:
+	if body != get_parent() and not _targets_in_range.has(body):
 		_targets_in_range.append(body)
 
 
@@ -45,25 +45,35 @@ func _update_closest_target() -> void:
 				closest = target
 		i -= 1
 		
-		if closest != current_target:
-			current_target = closest
-			target_changed.emit(current_target)
+	if closest != current_target:
+		current_target = closest
+		target_changed.emit(current_target)
 
 
 func _rotate_visual(delta: float) -> void:
-	if not is_instance_valid(visual_to_rotate) or not is_instance_valid(current_target):
+	if not toggle_rotation or not is_instance_valid(visual_to_rotate):
 		return
 	
-	var target_angle := visual_to_rotate.global_position.angle_to_point(current_target.global_position)
+	var target_angle: float
+	
+	if is_instance_valid(current_target):
+		target_angle = visual_to_rotate.global_position.angle_to_point(current_target.global_position)
+	else:
+		var parent_body := get_parent() as CharacterBody2D
+		if parent_body and parent_body.velocity.length_squared() > 1.0:
+			target_angle = parent_body.velocity.angle()
+		else:
+			return
 	
 	if rotation_speed <= 0.0:
 		visual_to_rotate.global_rotation = target_angle
 	else:
-		visual_to_rotate.global_rotation = rotate_toward(
+		visual_to_rotate.global_rotation = lerp_angle(
 			visual_to_rotate.global_rotation,
 			target_angle,
 			rotation_speed * delta
 		)
-		
+
+
 func get_target() -> Node2D:
 	return current_target
