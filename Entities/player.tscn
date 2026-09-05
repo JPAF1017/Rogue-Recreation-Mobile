@@ -7,6 +7,9 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1a03h"]
 size = Vector2(36, 36)
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_1a03h"]
+radius = 182.98907
+
 [node name="Player" type="CharacterBody2D" unique_id=675805074]
 collision_layer = 2
 collision_mask = 5
@@ -21,5 +24,13 @@ friction = 2800.0
 scale = Vector2(0.072265625, 0.072265625)
 texture = ExtResource("2_xd3k7")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1315351215]
+[node name="Square" type="Sprite2D" parent="." unique_id=494629896]
+position = Vector2(26.000002, 9.536743e-07)
+scale = Vector2(0.014648434, 0.014648434)
+texture = ExtResource("2_xd3k7")
+
+[node name="Collision" type="CollisionShape2D" parent="." unique_id=1315351215]
 shape = SubResource("RectangleShape2D_1a03h")
+
+[node name="Detector" type="CollisionShape2D" parent="." unique_id=139555205]
+shape = SubResource("CircleShape2D_1a03h")

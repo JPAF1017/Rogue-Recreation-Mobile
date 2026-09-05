@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://c6j5ljav0a66"]
+
+[ext_resource type="Script" uid="uid://cxnkuwhsmqshp" path="res://Components/Scripts/target_detector_component.gd" id="1_568vc"]
+
+[node name="TargetDetectorComponent" type="Node2D" unique_id=167282782]
+script = ExtResource("1_568vc")

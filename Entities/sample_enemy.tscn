@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://bpm15kcgc0msu"]
+
+[ext_resource type="Texture2D" uid="uid://ce0x3xgcvgte" path="res://Assets/square.png" id="1_vebu4"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_stmi3"]
+size = Vector2(36, 36)
+
+[node name="SampleEnemy" type="CharacterBody2D" unique_id=823218055]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=509880922]
+scale = Vector2(0.072265625, 0.072265625)
+texture = ExtResource("1_vebu4")
+
+[node name="Collision" type="CollisionShape2D" parent="." unique_id=433923119]
+shape = SubResource("RectangleShape2D_stmi3")
