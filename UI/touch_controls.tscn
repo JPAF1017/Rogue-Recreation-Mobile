@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://jpaw2dqiy26u"]
+
+[node name="TouchControls" type="Control" unique_id=1720360131]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VirtualJoystick" type="VirtualJoystick" parent="." unique_id=433246422]
+layout_mode = 0
+offset_left = 178.0
+offset_top = 451.0
+offset_right = 218.0
+offset_bottom = 491.0
+joystick_size = 170.0
+action_left = &"A"
+action_right = &"D"
+action_up = &"W"
+action_down = &"S"
