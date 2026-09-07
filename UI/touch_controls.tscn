@@ -1,5 +1,8 @@
 [gd_scene format=3 uid="uid://jpaw2dqiy26u"]
 
+[ext_resource type="Script" uid="uid://doh7uvhpbou14" path="res://UI/Scripts/touch_controls.gd" id="1_atovs"]
+[ext_resource type="PackedScene" uid="uid://njwbsjio2mve" path="res://Components/player_health_bar.tscn" id="1_wivvl"]
+
 [node name="TouchControls" type="Control" unique_id=1720360131]
 layout_mode = 3
 anchors_preset = 15
@@ -7,6 +10,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_atovs")
 
 [node name="VirtualJoystick" type="VirtualJoystick" parent="." unique_id=433246422]
 layout_mode = 0
@@ -19,3 +23,12 @@ action_left = &"A"
 action_right = &"D"
 action_up = &"W"
 action_down = &"S"
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1661106396]
+
+[node name="PlayerHealthBar" parent="CanvasLayer" unique_id=583705359 instance=ExtResource("1_wivvl")]
+offset_left = -6.0
+offset_top = -133.0
+offset_right = 439.0
+offset_bottom = 312.0
+texture_progress_offset = Vector2(0, 46.175)

@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://ddwtiufc3pqjh"]
+
+[ext_resource type="Script" uid="uid://by3duyupgwqxc" path="res://Components/Scripts/health_bar_component.gd" id="1_nkyjh"]
+
+[node name="HealthBarComponent" type="TextureProgressBar" unique_id=583705359]
+offset_right = 40.0
+offset_bottom = 40.0
+nine_patch_stretch = true
+script = ExtResource("1_nkyjh")
