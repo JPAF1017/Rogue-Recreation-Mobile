@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://de7qpacfkddiy"]
+
+[ext_resource type="Script" uid="uid://bu2h7wjc20pdp" path="res://Components/Scripts/flipper_component.gd" id="1_g4syl"]
+
+[node name="FlipperComponent" type="Node" unique_id=458966726]
+script = ExtResource("1_g4syl")

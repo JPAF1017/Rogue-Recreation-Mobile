@@ -17,8 +17,7 @@ func _process(_delta: float) -> void:
 
 
 func _on_body_entered(body: Node2D) -> void:
-	if body != get_parent() and not _targets_in_range.has(body):
-		_targets_in_range.append(body)
+	_targets_in_range.erase(body)
 
 
 func _on_body_exited(body: Node2D) -> void:

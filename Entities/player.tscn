@@ -5,6 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://ce0x3xgcvgte" path="res://Assets/square.png" id="2_xd3k7"]
 [ext_resource type="PackedScene" uid="uid://c6j5ljav0a66" path="res://Components/target_detector_component.tscn" id="4_taegk"]
 [ext_resource type="PackedScene" uid="uid://cfckm8ulvu3c" path="res://Components/health_component.tscn" id="5_kee72"]
+[ext_resource type="PackedScene" uid="uid://dwyp5ffnun2hl" path="res://Components/rotator_component.tscn" id="6_prmdv"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1a03h"]
 size = Vector2(36, 36)
@@ -44,3 +45,7 @@ shape = SubResource("CircleShape2D_1a03h")
 max_speed = 380.0
 acceleration = 2400.0
 friction = 2800.0
+
+[node name="RotatorComponent" parent="." unique_id=662024948 node_paths=PackedStringArray("visual_to_rotate", "target_detector") instance=ExtResource("6_prmdv")]
+visual_to_rotate = NodePath("../Target")
+target_detector = NodePath("../TargetDetectorComponent")
