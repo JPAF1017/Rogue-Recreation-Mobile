@@ -10,6 +10,9 @@ var _targets_in_range: Array[Node2D] = []
 func _ready() -> void:
 	body_entered.connect(_on_body_entered)
 	body_exited.connect(_on_body_exited)
+	for body in get_overlapping_bodies():
+		if body is Node2D:
+			_on_body_entered(body)
 
 
 func _process(_delta: float) -> void:
@@ -17,7 +20,10 @@ func _process(_delta: float) -> void:
 
 
 func _on_body_entered(body: Node2D) -> void:
-	_targets_in_range.erase(body)
+	if body == self or body == get_parent() or body == owner:
+		return
+	if not _targets_in_range.has(body):
+		_targets_in_range.append(body)
 
 
 func _on_body_exited(body: Node2D) -> void:
@@ -37,9 +43,11 @@ func _update_closest_target() -> void:
 			var dist_sq := global_position.distance_squared_to(target.global_position)
 			if dist_sq < shortest_dist_sq:
 				shortest_dist_sq = dist_sq
+				closest = target
 		i -= 1
 	
-	if closest != current_target:
+	var target_lost_validity := not is_instance_valid(current_target) and current_target != null
+	if closest != current_target or target_lost_validity:
 		current_target = closest
 		target_changed.emit(current_target)
 

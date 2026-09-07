@@ -12,14 +12,10 @@ func _ready() -> void:
 	if target_detector:
 		target_detector.target_changed.connect(_on_target_changed)
 		_active_target = target_detector.get_target()
-		print("[Rotator] Connected. Initial target: ", _active_target)
-	else:
-		push_error("[Rotator] target_detector is NULL! Check the Inspector.")
 
 
 func _on_target_changed(new_target: Node2D) -> void:
 	_active_target = new_target
-	print("[Rotator] Signal received! New target: ", new_target)
 
 
 func _process(delta: float) -> void:
@@ -45,5 +41,5 @@ func _process(delta: float) -> void:
 		visual_to_rotate.global_rotation = lerp_angle(
 			visual_to_rotate.global_rotation,
 			target_angle,
-			rotation_speed * delta
+			clampf(rotation_speed * delta, 0.0, 1.0)
 		)
