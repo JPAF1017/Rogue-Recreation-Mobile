@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://dwyp5ffnun2hl" path="res://Components/AssetManipulation/rotator_component.tscn" id="6_prmdv"]
 [ext_resource type="PackedScene" uid="uid://de7qpacfkddiy" path="res://Components/AssetManipulation/flipper_component.tscn" id="7_s1j76"]
 [ext_resource type="PackedScene" uid="uid://cdhe5044m17ti" path="res://Components/GameLogic/damage_receiver_component.tscn" id="8_6jj0l"]
+[ext_resource type="PackedScene" uid="uid://r8xx3puhl6mc" path="res://Components/GameLogic/knockback_component.tscn" id="9_ua6mu"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1a03h"]
 size = Vector2(36, 36)
@@ -42,6 +43,8 @@ texture = ExtResource("2_xd3k7")
 [node name="Collision" type="CollisionShape2D" parent="." unique_id=1315351215]
 shape = SubResource("RectangleShape2D_1a03h")
 
+[node name="___Components___" type="Node2D" parent="." unique_id=1535997699]
+
 [node name="TargetDetectorComponent" parent="." unique_id=1298262147 instance=ExtResource("4_taegk")]
 collision_layer = 2
 collision_mask = 4
@@ -68,3 +71,7 @@ health_component = NodePath("../HealthComponent")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DamageReceiverComponent" unique_id=194077974]
 shape = SubResource("RectangleShape2D_dr0v6")
+
+[node name="KnockbackComponent" parent="." unique_id=135413416 node_paths=PackedStringArray("damage_receiver", "movement_component") instance=ExtResource("9_ua6mu")]
+damage_receiver = NodePath("../DamageReceiverComponent")
+movement_component = NodePath("../MovementComponent")
