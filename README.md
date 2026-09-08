@@ -1,5 +1,9 @@
 # Rogue-Recreation-Mobile
 
+A real-time 2D mobile reimagining of the classic dungeon crawler **Rogue (1980)**, built in **Godot 4**. 
+This project transforms the original turn-based, grid-based ASCII experience into a fast-paced, action-oriented roguelike tailored for mobile touch controls, while preserving iconic Rogue mechanics like the hunger clock, unidentified scrolls/potions, dungeon traps, and procedural peril. The architecture follows a strictly decoupled, modular **Entity-Component** pattern for seamless assembly.
+---
+
 ## Component Roadmap & Registry
 
 ### 🏃 Movement & Locomotion
@@ -11,7 +15,7 @@
 - [x] **ArmorComponent** — Damage reduction & rust mechanics
 - [x] **InvulnerabilityComponent** — Multi-source i-frames tracking
 - [x] **KnockbackComponent** — Impulse application on hit
-- [x] **HitFlashComponent** — Sprite hit color/flash feedback
+- [ ] **HitFlashComponent** — Sprite hit color/flash feedback
 - [ ] **MeleeAttackComponent / WeaponComponent** — Player swings/hitboxes
 - [ ] **ProjectileShooterComponent & ProjectileComponent** — Wands, bows, darts
 - [ ] **DashComponent** — Mobile dodge roll with i-frames
