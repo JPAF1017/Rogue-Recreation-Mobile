@@ -5,6 +5,9 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_stmi3"]
 size = Vector2(36, 36)
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_1a03h"]
+radius = 35.69314
+
 [node name="SampleEnemy" type="CharacterBody2D" unique_id=823218055]
 collision_layer = 4
 collision_mask = 7
@@ -15,3 +18,8 @@ texture = ExtResource("1_vebu4")
 
 [node name="Collision" type="CollisionShape2D" parent="." unique_id=433923119]
 shape = SubResource("RectangleShape2D_stmi3")
+
+[node name="Damage" type="Area2D" parent="." unique_id=796280544]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Damage" unique_id=753381642]
+shape = SubResource("CircleShape2D_1a03h")

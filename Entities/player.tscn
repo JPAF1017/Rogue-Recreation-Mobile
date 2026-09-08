@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://c6j5ljav0a66" path="res://Components/target_detector_component.tscn" id="4_taegk"]
 [ext_resource type="PackedScene" uid="uid://cfckm8ulvu3c" path="res://Components/health_component.tscn" id="5_kee72"]
 [ext_resource type="PackedScene" uid="uid://dwyp5ffnun2hl" path="res://Components/rotator_component.tscn" id="6_prmdv"]
+[ext_resource type="PackedScene" uid="uid://de7qpacfkddiy" path="res://Components/flipper_component.tscn" id="7_s1j76"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1a03h"]
 size = Vector2(36, 36)
@@ -29,6 +30,11 @@ texture = ExtResource("2_xd3k7")
 scale = Vector2(0.072265625, 0.072265625)
 texture = ExtResource("2_xd3k7")
 
+[node name="Sprite2D" type="Sprite2D" parent="Sprite2D" unique_id=398283315]
+position = Vector2(-228.32433, -3.8146973e-06)
+scale = Vector2(0.4594595, 0.5405406)
+texture = ExtResource("2_xd3k7")
+
 [node name="Collision" type="CollisionShape2D" parent="." unique_id=1315351215]
 shape = SubResource("RectangleShape2D_1a03h")
 
@@ -49,3 +55,6 @@ friction = 2800.0
 [node name="RotatorComponent" parent="." unique_id=662024948 node_paths=PackedStringArray("visual_to_rotate", "target_detector") instance=ExtResource("6_prmdv")]
 visual_to_rotate = NodePath("../Target")
 target_detector = NodePath("../TargetDetectorComponent")
+
+[node name="FlipperComponent" parent="." unique_id=458966726 node_paths=PackedStringArray("visual_to_flip") instance=ExtResource("7_s1j76")]
+visual_to_flip = NodePath("../Sprite2D")
