@@ -9,6 +9,7 @@ extends CharacterBody2D
 var base_speed: float
 
 func _ready() -> void:
+	add_to_group("player")
 	base_speed = movement_component.max_speed
 	health_component.health_changed.connect(_on_health_changed)
 	health_component.damaged.connect(_on_damaged)

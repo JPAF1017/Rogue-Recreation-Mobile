@@ -48,7 +48,7 @@ func _on_health_changed(current: float, max_val: float) -> void:
 		value = current
 		return
 	
-	if _tween and _tween.is_runing():
+	if _tween and _tween.is_running():
 		_tween.kill()
 	
 	_tween = create_tween()

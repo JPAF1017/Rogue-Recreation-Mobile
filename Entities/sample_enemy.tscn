@@ -1,12 +1,13 @@
 [gd_scene format=3 uid="uid://bpm15kcgc0msu"]
 
 [ext_resource type="Texture2D" uid="uid://ce0x3xgcvgte" path="res://Assets/square.png" id="1_vebu4"]
+[ext_resource type="PackedScene" uid="uid://dpno0s71f4y4l" path="res://Components/GameLogic/damage_dealer_component.tscn" id="2_stmi3"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_stmi3"]
 size = Vector2(36, 36)
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_1a03h"]
-radius = 35.69314
+[sub_resource type="CircleShape2D" id="CircleShape2D_dr0v6"]
+radius = 32.0
 
 [node name="SampleEnemy" type="CharacterBody2D" unique_id=823218055]
 collision_layer = 4
@@ -19,7 +20,8 @@ texture = ExtResource("1_vebu4")
 [node name="Collision" type="CollisionShape2D" parent="." unique_id=433923119]
 shape = SubResource("RectangleShape2D_stmi3")
 
-[node name="Damage" type="Area2D" parent="." unique_id=796280544]
+[node name="DamageDealerComponent" parent="." unique_id=408483584 instance=ExtResource("2_stmi3")]
+knockback_force = 500.0
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Damage" unique_id=753381642]
-shape = SubResource("CircleShape2D_1a03h")
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DamageDealerComponent" unique_id=1937071640]
+shape = SubResource("CircleShape2D_dr0v6")

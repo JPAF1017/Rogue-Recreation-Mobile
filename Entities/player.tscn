@@ -7,12 +7,16 @@
 [ext_resource type="PackedScene" uid="uid://cfckm8ulvu3c" path="res://Components/GameLogic/health_component.tscn" id="5_kee72"]
 [ext_resource type="PackedScene" uid="uid://dwyp5ffnun2hl" path="res://Components/AssetManipulation/rotator_component.tscn" id="6_prmdv"]
 [ext_resource type="PackedScene" uid="uid://de7qpacfkddiy" path="res://Components/AssetManipulation/flipper_component.tscn" id="7_s1j76"]
+[ext_resource type="PackedScene" uid="uid://cdhe5044m17ti" path="res://Components/GameLogic/damage_receiver_component.tscn" id="8_6jj0l"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1a03h"]
 size = Vector2(36, 36)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_1a03h"]
 radius = 182.98907
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dr0v6"]
+size = Vector2(36, 36)
 
 [node name="Player" type="CharacterBody2D" unique_id=675805074]
 collision_layer = 2
@@ -58,3 +62,9 @@ target_detector = NodePath("../TargetDetectorComponent")
 
 [node name="FlipperComponent" parent="." unique_id=458966726 node_paths=PackedStringArray("visual_to_flip") instance=ExtResource("7_s1j76")]
 visual_to_flip = NodePath("../Sprite2D")
+
+[node name="DamageReceiverComponent" parent="." unique_id=1902789636 node_paths=PackedStringArray("health_component") instance=ExtResource("8_6jj0l")]
+health_component = NodePath("../HealthComponent")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DamageReceiverComponent" unique_id=194077974]
+shape = SubResource("RectangleShape2D_dr0v6")
