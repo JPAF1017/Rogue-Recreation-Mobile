@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://njwbsjio2mve"]
 
-[ext_resource type="PackedScene" uid="uid://ddwtiufc3pqjh" path="res://Components/health_bar_component.tscn" id="1_jk3r2"]
+[ext_resource type="PackedScene" uid="uid://ddwtiufc3pqjh" path="res://Components/UI/health_bar_component.tscn" id="1_jk3r2"]
 [ext_resource type="Texture2D" uid="uid://dxm3wn7lakpps" path="res://Assets/UI/HealthBar/outside_health_player.png" id="2_0b8uc"]
 [ext_resource type="Texture2D" uid="uid://c26dgngykp0ga" path="res://Assets/UI/HealthBar/inside_health_player.png" id="3_swf0n"]
 

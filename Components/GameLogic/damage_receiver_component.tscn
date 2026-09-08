@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://cdhe5044m17ti"]
+
+[ext_resource type="Script" uid="uid://cfud23tjqo13l" path="res://Components/Scripts/damage_receiver_component.gd" id="1_3yqdj"]
+
+[node name="DamageReceiverComponent" type="Area2D" unique_id=1902789636]
+script = ExtResource("1_3yqdj")

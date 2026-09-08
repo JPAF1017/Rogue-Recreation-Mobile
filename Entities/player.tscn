@@ -1,12 +1,12 @@
 [gd_scene format=3 uid="uid://cx4dfjr385k11"]
 
-[ext_resource type="PackedScene" uid="uid://dtjq3ylhcj3k" path="res://Components/movement_component.tscn" id="1_gb1tc"]
+[ext_resource type="PackedScene" uid="uid://dtjq3ylhcj3k" path="res://Components/GameLogic/movement_component.tscn" id="1_gb1tc"]
 [ext_resource type="Script" uid="uid://cmhspgkccwy38" path="res://Entities/Scripts/player.gd" id="1_xd3k7"]
 [ext_resource type="Texture2D" uid="uid://ce0x3xgcvgte" path="res://Assets/square.png" id="2_xd3k7"]
-[ext_resource type="PackedScene" uid="uid://c6j5ljav0a66" path="res://Components/target_detector_component.tscn" id="4_taegk"]
-[ext_resource type="PackedScene" uid="uid://cfckm8ulvu3c" path="res://Components/health_component.tscn" id="5_kee72"]
-[ext_resource type="PackedScene" uid="uid://dwyp5ffnun2hl" path="res://Components/rotator_component.tscn" id="6_prmdv"]
-[ext_resource type="PackedScene" uid="uid://de7qpacfkddiy" path="res://Components/flipper_component.tscn" id="7_s1j76"]
+[ext_resource type="PackedScene" uid="uid://c6j5ljav0a66" path="res://Components/GameLogic/target_detector_component.tscn" id="4_taegk"]
+[ext_resource type="PackedScene" uid="uid://cfckm8ulvu3c" path="res://Components/GameLogic/health_component.tscn" id="5_kee72"]
+[ext_resource type="PackedScene" uid="uid://dwyp5ffnun2hl" path="res://Components/AssetManipulation/rotator_component.tscn" id="6_prmdv"]
+[ext_resource type="PackedScene" uid="uid://de7qpacfkddiy" path="res://Components/AssetManipulation/flipper_component.tscn" id="7_s1j76"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1a03h"]
 size = Vector2(36, 36)

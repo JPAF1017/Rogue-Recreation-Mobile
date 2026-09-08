@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://jpaw2dqiy26u"]
 
 [ext_resource type="Script" uid="uid://doh7uvhpbou14" path="res://UI/Scripts/touch_controls.gd" id="1_atovs"]
-[ext_resource type="PackedScene" uid="uid://njwbsjio2mve" path="res://Components/player_health_bar.tscn" id="1_wivvl"]
+[ext_resource type="PackedScene" uid="uid://njwbsjio2mve" path="res://Components/UI/player_health_bar.tscn" id="1_wivvl"]
 
 [node name="TouchControls" type="Control" unique_id=1720360131]
 layout_mode = 3
