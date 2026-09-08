@@ -1,0 +1,5 @@
+[gd_scene format=3 uid="uid://c3qre3cyfr4ca"]
+
+[ext_resource type="PackedScene" uid="uid://ddwtiufc3pqjh" path="res://Components/UI/health_bar_component.tscn" id="1_e5xm4"]
+
+[node name="EnemyHealthBar" unique_id=583705359 instance=ExtResource("1_e5xm4")]

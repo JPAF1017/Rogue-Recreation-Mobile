@@ -20,6 +20,8 @@ texture = ExtResource("1_vebu4")
 [node name="Collision" type="CollisionShape2D" parent="." unique_id=433923119]
 shape = SubResource("RectangleShape2D_stmi3")
 
+[node name="___Components___" type="Node" parent="." unique_id=1545793894]
+
 [node name="DamageDealerComponent" parent="." unique_id=408483584 instance=ExtResource("2_stmi3")]
 knockback_force = 500.0
 
