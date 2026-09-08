@@ -6,38 +6,36 @@ signal damage_blocked(reason: String)
 
 @export_group("Dependencies")
 @export var health_component: HealthComponent
+@export var armor_component: ArmorComponent
+@export var invulnerability_component: InvulnerabilityComponent
 
-@export_group("Damage Settings")
-@export var armor: float = 0.0
-@export var invulnerability_duration: float = 0.3
-
-var is_invulnerable: bool = false
-var _invulnerability_timer: SceneTreeTimer = null
+@export_group("Hit Invulnerability")
+@export var post_hit_invulnerability: float = 0.3
 
 
 func receive_damage(damage_data: DamageData) -> bool:
 	if not health_component or health_component.is_dead():
 		return false
 		
-	if is_invulnerable or health_component.is_invulnerable:
+	# 1. Check Invulnerability (if component exists and is active)
+	if invulnerability_component and invulnerability_component.is_invulnerable():
+		damage_blocked.emit("invulnerable")
+		return false
+	if health_component.is_invulnerable:
 		damage_blocked.emit("invulnerable")
 		return false
 
-	# Calculate reduced damage
-	var effective_damage: float = max(1.0, damage_data.amount - armor)
+	# 2. Calculate Mitigated Damage (via ArmorComponent if present)
+	var final_damage: float = damage_data.amount
+	if armor_component:
+		final_damage = armor_component.calculate_mitigated_damage(damage_data.amount)
 	
-	# Apply damage to HealthComponent
-	health_component.take_damage(effective_damage)
+	# 3. Apply damage to HealthComponent
+	health_component.take_damage(final_damage)
 	damage_received.emit(damage_data)
 	
-	# Start i-frame cooldown
-	if invulnerability_duration > 0.0:
-		_start_invulnerability()
+	# 4. Trigger post-hit i-frames
+	if invulnerability_component and post_hit_invulnerability > 0.0:
+		invulnerability_component.add_invulnerability("hit", post_hit_invulnerability)
 		
 	return true
-
-
-func _start_invulnerability() -> void:
-	is_invulnerable = true
-	_invulnerability_timer = get_tree().create_timer(invulnerability_duration)
-	_invulnerability_timer.timeout.connect(func(): is_invulnerable = false)

@@ -9,6 +9,8 @@
 [ext_resource type="PackedScene" uid="uid://de7qpacfkddiy" path="res://Components/AssetManipulation/flipper_component.tscn" id="7_s1j76"]
 [ext_resource type="PackedScene" uid="uid://cdhe5044m17ti" path="res://Components/GameLogic/damage_receiver_component.tscn" id="8_6jj0l"]
 [ext_resource type="PackedScene" uid="uid://r8xx3puhl6mc" path="res://Components/GameLogic/knockback_component.tscn" id="9_ua6mu"]
+[ext_resource type="PackedScene" uid="uid://0ngbb8t8atu5" path="res://Components/GameLogic/invulnerability_component.tscn" id="10_xakct"]
+[ext_resource type="PackedScene" uid="uid://cxk45fwo12ag5" path="res://Components/GameLogic/armor_component.tscn" id="11_k47j4"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1a03h"]
 size = Vector2(36, 36)
@@ -66,8 +68,10 @@ target_detector = NodePath("../TargetDetectorComponent")
 [node name="FlipperComponent" parent="." unique_id=458966726 node_paths=PackedStringArray("visual_to_flip") instance=ExtResource("7_s1j76")]
 visual_to_flip = NodePath("../Sprite2D")
 
-[node name="DamageReceiverComponent" parent="." unique_id=1902789636 node_paths=PackedStringArray("health_component") instance=ExtResource("8_6jj0l")]
+[node name="DamageReceiverComponent" parent="." unique_id=1902789636 node_paths=PackedStringArray("health_component", "armor_component", "invulnerability_component") instance=ExtResource("8_6jj0l")]
 health_component = NodePath("../HealthComponent")
+armor_component = NodePath("../ArmorComponent")
+invulnerability_component = NodePath("../InvulnerabilityComponent")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DamageReceiverComponent" unique_id=194077974]
 shape = SubResource("RectangleShape2D_dr0v6")
@@ -75,3 +79,7 @@ shape = SubResource("RectangleShape2D_dr0v6")
 [node name="KnockbackComponent" parent="." unique_id=135413416 node_paths=PackedStringArray("damage_receiver", "movement_component") instance=ExtResource("9_ua6mu")]
 damage_receiver = NodePath("../DamageReceiverComponent")
 movement_component = NodePath("../MovementComponent")
+
+[node name="InvulnerabilityComponent" parent="." unique_id=1389038216 instance=ExtResource("10_xakct")]
+
+[node name="ArmorComponent" parent="." unique_id=1164395859 instance=ExtResource("11_k47j4")]
