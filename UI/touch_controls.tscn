@@ -14,15 +14,22 @@ script = ExtResource("1_atovs")
 
 [node name="VirtualJoystick" type="VirtualJoystick" parent="." unique_id=433246422]
 layout_mode = 0
-offset_left = 178.0
-offset_top = 451.0
-offset_right = 218.0
-offset_bottom = 491.0
+offset_left = 140.0
+offset_top = 474.0
+offset_right = 180.0
+offset_bottom = 514.0
 joystick_size = 170.0
 action_left = &"A"
 action_right = &"D"
 action_up = &"W"
 action_down = &"S"
+
+[node name="DashButton" type="Button" parent="." unique_id=510469825]
+layout_mode = 0
+offset_left = 974.0
+offset_top = 468.0
+offset_right = 1078.0
+offset_bottom = 565.0
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1661106396]
 

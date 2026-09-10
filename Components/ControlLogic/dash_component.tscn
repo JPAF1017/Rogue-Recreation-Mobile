@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://bsmsf6ktjqhm5"]
+
+[ext_resource type="Script" uid="uid://cvvb2y4fcb35t" path="res://Components/Scripts/dash_component.gd" id="1_pdotq"]
+
+[node name="DashComponent" type="Node2D" unique_id=1308827431]
+script = ExtResource("1_pdotq")
