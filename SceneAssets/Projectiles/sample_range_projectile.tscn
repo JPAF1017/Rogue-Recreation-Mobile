@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://wjq6mdwx3nga"]
+
+[ext_resource type="Texture2D" uid="uid://ce0x3xgcvgte" path="res://Assets/square.png" id="1_rvxrb"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1a03h"]
+size = Vector2(68, 4)
+
+[node name="SampleRangeProjectile" type="Area2D" unique_id=1126040747]
+collision_layer = 8
+collision_mask = 4
+
+[node name="Square" type="Sprite2D" parent="." unique_id=1068581168]
+modulate = Color(0, 0, 0, 1)
+scale = Vector2(0.1329346, 0.008789063)
+texture = ExtResource("1_rvxrb")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1092284931]
+shape = SubResource("RectangleShape2D_1a03h")

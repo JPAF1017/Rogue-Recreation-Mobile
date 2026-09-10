@@ -15,6 +15,8 @@
 [ext_resource type="PackedScene" uid="uid://bkfhyh0r8s766" path="res://Components/AssetManipulation/flash_component.tscn" id="13_klb6e"]
 [ext_resource type="PackedScene" uid="uid://bcx0nt3p14ud7" path="res://Components/GameLogic/melee_attack_component.tscn" id="14_pg4qw"]
 [ext_resource type="PackedScene" uid="uid://dk6fd1m4kaxyx" path="res://SceneAssets/Projectiles/sample_melee_slash.tscn" id="15_25cb4"]
+[ext_resource type="PackedScene" uid="uid://cuvnodo75tsd6" path="res://Components/GameLogic/projectile_shooter_component.tscn" id="16_uck12"]
+[ext_resource type="PackedScene" uid="uid://wjq6mdwx3nga" path="res://SceneAssets/Projectiles/sample_range_projectile.tscn" id="17_mat3c"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1a03h"]
 size = Vector2(36, 36)
@@ -107,6 +109,13 @@ health_component = NodePath("../HealthComponent")
 
 [node name="MeleeAttackComponent" parent="." unique_id=27577576 node_paths=PackedStringArray("spawn_marker", "rotator_component", "target_detector", "flipper_component") instance=ExtResource("14_pg4qw")]
 projectile_scene = ExtResource("15_25cb4")
+spawn_marker = NodePath("../SpawnMarker")
+rotator_component = NodePath("../RotatorComponent")
+target_detector = NodePath("../TargetDetectorComponent")
+flipper_component = NodePath("../FlipperComponent")
+
+[node name="ProjectileShooterComponent" parent="." unique_id=293995391 node_paths=PackedStringArray("spawn_marker", "rotator_component", "target_detector", "flipper_component") instance=ExtResource("16_uck12")]
+standard_bullet_scene = ExtResource("17_mat3c")
 spawn_marker = NodePath("../SpawnMarker")
 rotator_component = NodePath("../RotatorComponent")
 target_detector = NodePath("../TargetDetectorComponent")
