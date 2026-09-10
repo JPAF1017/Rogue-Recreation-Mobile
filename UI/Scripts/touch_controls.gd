@@ -19,3 +19,7 @@ func _ready() -> void:
 	var melee_attack: MeleeAttackComponent = player.get_node_or_null("MeleeAttackComponent")
 	if melee_attack:
 		melee_attack.assign_button(attack_button)
+	
+	var shooter: ProjectileShooterComponent = player.get_node_or_null("ProjectileShooterComponent")
+	if shooter:
+		shooter.assign_button(attack_button)
