@@ -6,10 +6,11 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1a03h"]
 size = Vector2(68, 4)
 
-[node name="SampleRangeProjectile" type="Area2D" unique_id=1126040747]
+[node name="SampleRangeProjectile" type="Area2D" unique_id=1126040747 node_paths=PackedStringArray("visual_node")]
 collision_layer = 8
 collision_mask = 4
 script = ExtResource("1_mihcw")
+visual_node = NodePath("Square")
 
 [node name="Square" type="Sprite2D" parent="." unique_id=1068581168]
 modulate = Color(0, 0, 0, 1)

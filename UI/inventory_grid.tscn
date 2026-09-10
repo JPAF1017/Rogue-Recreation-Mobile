@@ -1,0 +1,45 @@
+[gd_scene format=3 uid="uid://brrxjmqjbvg6n"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_sjgsg"]
+content_margin_left = 12.0
+content_margin_top = 12.0
+content_margin_right = 12.0
+content_margin_bottom = 12.0
+bg_color = Color(0.18000486, 0.1800049, 0.18000478, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[node name="InventoryGrid" type="PanelContainer" unique_id=1218931858]
+custom_minimum_size = Vector2(370, 0)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -185.0
+offset_top = -159.0
+offset_right = 185.0
+offset_bottom = 159.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_sjgsg")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1133698879]
+layout_mode = 2
+
+[node name="TitleLable" type="Label" parent="VBoxContainer" unique_id=600949365]
+texture_filter = 1
+layout_mode = 2
+theme_override_font_sizes/font_size = 14
+text = "Inventory"
+
+[node name="ScrollContainer" type="ScrollContainer" parent="VBoxContainer" unique_id=298101675]
+custom_minimum_size = Vector2(0, 270)
+layout_mode = 2
+
+[node name="SlotGrid" type="GridContainer" parent="VBoxContainer/ScrollContainer" unique_id=150712057]
+layout_mode = 2
+size_flags_vertical = 0
+columns = 5
