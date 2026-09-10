@@ -12,6 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://0ngbb8t8atu5" path="res://Components/GameLogic/invulnerability_component.tscn" id="10_xakct"]
 [ext_resource type="PackedScene" uid="uid://cxk45fwo12ag5" path="res://Components/GameLogic/armor_component.tscn" id="11_k47j4"]
 [ext_resource type="PackedScene" uid="uid://bsmsf6ktjqhm5" path="res://Components/ControlLogic/dash_component.tscn" id="12_k47j4"]
+[ext_resource type="PackedScene" uid="uid://bkfhyh0r8s766" path="res://Components/AssetManipulation/flash_component.tscn" id="13_klb6e"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1a03h"]
 size = Vector2(36, 36)
@@ -91,3 +92,10 @@ invulnerability_component = NodePath("../InvulnerabilityComponent")
 damage_receiver = NodePath("../DamageReceiverComponent")
 dash_speed = 800.0
 dash_duration = 0.1
+
+[node name="FlashComponent" parent="." unique_id=1046220401 node_paths=PackedStringArray("target_visual", "damage_receiver", "health_component") instance=ExtResource("13_klb6e")]
+target_visual = NodePath("../Sprite2D")
+default_flash_color = Color(0.8564939, 3.657937e-06, 8.663535e-07, 1)
+default_duration = 0.3
+damage_receiver = NodePath("../DamageReceiverComponent")
+health_component = NodePath("../HealthComponent")

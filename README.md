@@ -17,7 +17,7 @@ This project transforms the original turn-based, grid-based ASCII experience int
 - [x] **ArmorComponent** — Damage reduction & rust mechanics
 - [x] **InvulnerabilityComponent** — Multi-source i-frames tracking
 - [x] **KnockbackComponent** — Impulse application on hit
-- [ ] **HitFlashComponent** — Sprite hit color/flash feedback
+- [x] **HitFlashComponent** — Sprite hit color/flash feedback
 - [ ] **MeleeAttackComponent / WeaponComponent** — Player swings/hitboxes
 - [ ] **ProjectileShooterComponent & ProjectileComponent** — Wands, bows, darts
 - [x] **DashComponent** — Mobile dodge roll with i-frames
