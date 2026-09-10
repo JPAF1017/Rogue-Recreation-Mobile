@@ -26,10 +26,17 @@ action_down = &"S"
 
 [node name="DashButton" type="Button" parent="." unique_id=510469825]
 layout_mode = 0
-offset_left = 974.0
-offset_top = 468.0
-offset_right = 1078.0
-offset_bottom = 565.0
+offset_left = 938.0
+offset_top = 489.0
+offset_right = 1042.0
+offset_bottom = 586.0
+
+[node name="AttackButton" type="Button" parent="." unique_id=1030865803]
+layout_mode = 0
+offset_left = 984.0
+offset_top = 343.0
+offset_right = 1094.0
+offset_bottom = 452.0
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1661106396]
 

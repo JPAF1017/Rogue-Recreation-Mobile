@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://cuvnodo75tsd6"]
+
+[ext_resource type="Script" uid="uid://dr7ngvmqcjm37" path="res://Components/Scripts/projectile_shooter_component.gd" id="1_jmivs"]
+
+[node name="ProjectileShooterComponent" type="Node2D" unique_id=293995391]
+script = ExtResource("1_jmivs")

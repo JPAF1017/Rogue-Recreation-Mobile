@@ -204,3 +204,7 @@ func _connect_attack_button() -> void:
 func _disconnect_attack_button() -> void:
 	if attack_button and attack_button.pressed.is_connected(trigger_attack):
 		attack_button.pressed.disconnect(trigger_attack)
+
+
+func assign_button(button: BaseButton) -> void:
+	self.attack_button = button
