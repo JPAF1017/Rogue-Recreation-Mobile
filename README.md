@@ -19,7 +19,7 @@ This project transforms the original turn-based, grid-based ASCII experience int
 - [x] **KnockbackComponent** — Impulse application on hit
 - [x] **HitFlashComponent** — Sprite hit color/flash feedback
 - [x] **MeleeAttackComponent / WeaponComponent** — Player swings/hitboxes
-- [ ] **ProjectileShooterComponent & ProjectileComponent** — Wands, bows, darts
+- [x] **ProjectileShooterComponent & ProjectileComponent** — Wands, bows, darts
 - [x] **DashComponent** — Mobile dodge roll with i-frames
 
 ### 📜 Core Rogue Systems
