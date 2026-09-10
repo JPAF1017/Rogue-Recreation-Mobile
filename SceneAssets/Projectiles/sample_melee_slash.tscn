@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://dk6fd1m4kaxyx"]
+
+[ext_resource type="Texture2D" uid="uid://ds3jhwa57kec8" path="res://Assets/cresent.png" id="1_hex2j"]
+[ext_resource type="Script" uid="uid://cp1kcjk6q284" path="res://SceneAssets/Projectiles/Scripts/melee_projectile.gd" id="1_s6p8t"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dr0v6"]
+size = Vector2(24, 48)
+
+[node name="SampleMeleeSlash" type="Area2D" unique_id=1280668872]
+collision_layer = 8
+collision_mask = 4
+script = ExtResource("1_s6p8t")
+
+[node name="Cresent" type="Sprite2D" parent="." unique_id=709564497]
+position = Vector2(3.637979e-12, 6.1035156e-05)
+rotation = -2.3561945
+scale = Vector2(0.0946048, 0.0946048)
+texture = ExtResource("1_hex2j")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1662842684]
+position = Vector2(12, 0)
+shape = SubResource("RectangleShape2D_dr0v6")

@@ -13,6 +13,8 @@
 [ext_resource type="PackedScene" uid="uid://cxk45fwo12ag5" path="res://Components/GameLogic/armor_component.tscn" id="11_k47j4"]
 [ext_resource type="PackedScene" uid="uid://bsmsf6ktjqhm5" path="res://Components/ControlLogic/dash_component.tscn" id="12_k47j4"]
 [ext_resource type="PackedScene" uid="uid://bkfhyh0r8s766" path="res://Components/AssetManipulation/flash_component.tscn" id="13_klb6e"]
+[ext_resource type="PackedScene" uid="uid://bcx0nt3p14ud7" path="res://Components/GameLogic/melee_attack_component.tscn" id="14_pg4qw"]
+[ext_resource type="PackedScene" uid="uid://dk6fd1m4kaxyx" path="res://SceneAssets/Projectiles/sample_melee_slash.tscn" id="15_25cb4"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1a03h"]
 size = Vector2(36, 36)
@@ -46,6 +48,9 @@ texture = ExtResource("2_xd3k7")
 
 [node name="Collision" type="CollisionShape2D" parent="." unique_id=1315351215]
 shape = SubResource("RectangleShape2D_1a03h")
+
+[node name="SpawnMarker" type="Marker2D" parent="." unique_id=1136422566]
+position = Vector2(44, 0)
 
 [node name="___Components___" type="Node2D" parent="." unique_id=1535997699]
 
@@ -99,3 +104,10 @@ default_flash_color = Color(0.8564939, 3.657937e-06, 8.663535e-07, 1)
 default_duration = 0.3
 damage_receiver = NodePath("../DamageReceiverComponent")
 health_component = NodePath("../HealthComponent")
+
+[node name="MeleeAttackComponent" parent="." unique_id=27577576 node_paths=PackedStringArray("spawn_marker", "rotator_component", "target_detector", "flipper_component") instance=ExtResource("14_pg4qw")]
+projectile_scene = ExtResource("15_25cb4")
+spawn_marker = NodePath("../SpawnMarker")
+rotator_component = NodePath("../RotatorComponent")
+target_detector = NodePath("../TargetDetectorComponent")
+flipper_component = NodePath("../FlipperComponent")

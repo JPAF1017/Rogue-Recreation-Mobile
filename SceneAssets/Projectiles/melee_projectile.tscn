@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://n7jgmajiwesm"]
+
+[ext_resource type="Script" uid="uid://cp1kcjk6q284" path="res://SceneAssets/Projectiles/Scripts/melee_projectile.gd" id="1_a8rye"]
+
+[node name="MeleeProjectile" type="Area2D" unique_id=588632885]
+script = ExtResource("1_a8rye")
