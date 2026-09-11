@@ -1,13 +1,15 @@
-[gd_resource type="Resource" script_class="ItemData" load_steps=3 format=3]
+[gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://dl6jn2wodlk6g"]
 
-[ext_resource type="Script" path="res://Components/Scripts/item_data.gd" id="1_script"]
-[ext_resource type="PackedScene" path="res://SceneAssets/Projectiles/sample_melee_slash.tscn" id="2_slash"]
+[ext_resource type="Script" uid="uid://5mua3drhkf6n" path="res://Components/Scripts/item_data.gd" id="1_script"]
+[ext_resource type="PackedScene" uid="uid://dk6fd1m4kaxyx" path="res://SceneAssets/Projectiles/sample_melee_slash.tscn" id="2_slash"]
+[ext_resource type="Texture2D" uid="uid://bofamb83vyc67" path="res://icon.svg" id="2_tls1b"]
 
 [resource]
 script = ExtResource("1_script")
 id = &"sword_iron"
 name = "Iron Sword"
 description = "A standard iron sword. Slashes close enemies."
+icon = ExtResource("2_tls1b")
 item_type = 2
 equipment_slot = 1
 weapon_type = 1
