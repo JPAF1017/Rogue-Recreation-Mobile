@@ -17,6 +17,10 @@
 [ext_resource type="PackedScene" uid="uid://dk6fd1m4kaxyx" path="res://SceneAssets/Projectiles/sample_melee_slash.tscn" id="15_25cb4"]
 [ext_resource type="PackedScene" uid="uid://cuvnodo75tsd6" path="res://Components/GameLogic/projectile_shooter_component.tscn" id="16_uck12"]
 [ext_resource type="PackedScene" uid="uid://wjq6mdwx3nga" path="res://SceneAssets/Projectiles/sample_range_projectile.tscn" id="17_mat3c"]
+[ext_resource type="PackedScene" uid="uid://2espdxh4ccml" path="res://Components/GameLogic/equipment_component.tscn" id="18_v3fwn"]
+[ext_resource type="PackedScene" uid="uid://bw3opkqnxtsvr" path="res://Components/GameLogic/inventory_component.tscn" id="19_f8jwp"]
+[ext_resource type="Script" uid="uid://5mua3drhkf6n" path="res://Components/Scripts/item_data.gd" id="20_x5h13"]
+[ext_resource type="Resource" uid="uid://dl6jn2wodlk6g" path="res://Resources/Items/sword_iron.tres" id="21_o0d5x"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1a03h"]
 size = Vector2(36, 36)
@@ -120,3 +124,12 @@ spawn_marker = NodePath("../SpawnMarker")
 rotator_component = NodePath("../RotatorComponent")
 target_detector = NodePath("../TargetDetectorComponent")
 flipper_component = NodePath("../FlipperComponent")
+
+[node name="EquipmentComponent" parent="." unique_id=760347347 node_paths=PackedStringArray("inventory", "melee_attack_component", "projectile_shooter_component") instance=ExtResource("18_v3fwn")]
+inventory = NodePath("../InventoryComponent")
+melee_attack_component = NodePath("../MeleeAttackComponent")
+projectile_shooter_component = NodePath("../ProjectileShooterComponent")
+main_hand_item = ExtResource("21_o0d5x")
+
+[node name="InventoryComponent" parent="." unique_id=2016937349 instance=ExtResource("19_f8jwp")]
+starting_items = Array[ExtResource("20_x5h13")]([ExtResource("21_o0d5x")])

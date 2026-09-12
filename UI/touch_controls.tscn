@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://doh7uvhpbou14" path="res://UI/Scripts/touch_controls.gd" id="1_atovs"]
 [ext_resource type="PackedScene" uid="uid://njwbsjio2mve" path="res://Components/UI/player_health_bar.tscn" id="1_wivvl"]
+[ext_resource type="PackedScene" uid="uid://brrxjmqjbvg6n" path="res://UI/inventory_grid.tscn" id="3_wivvl"]
 
 [node name="TouchControls" type="Control" unique_id=1720360131]
 layout_mode = 3
@@ -30,6 +31,7 @@ offset_left = 938.0
 offset_top = 489.0
 offset_right = 1042.0
 offset_bottom = 586.0
+text = "Dash"
 
 [node name="AttackButton" type="Button" parent="." unique_id=1030865803]
 layout_mode = 0
@@ -37,6 +39,16 @@ offset_left = 984.0
 offset_top = 343.0
 offset_right = 1094.0
 offset_bottom = 452.0
+text = "Attack"
+
+[node name="InventoryButton" type="Button" parent="." unique_id=1132004533]
+texture_filter = 1
+layout_mode = 0
+offset_left = 991.0
+offset_top = 230.0
+offset_right = 1075.742
+offset_bottom = 301.0
+text = "Bag"
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1661106396]
 
@@ -46,3 +58,5 @@ offset_top = -133.0
 offset_right = 439.0
 offset_bottom = 312.0
 texture_progress_offset = Vector2(0, 46.175)
+
+[node name="InventoryGrid" parent="CanvasLayer" unique_id=1218931858 instance=ExtResource("3_wivvl")]

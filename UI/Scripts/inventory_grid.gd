@@ -32,6 +32,7 @@ func _build_grid() -> void:
 		slot_grid.add_child(slot_ui)
 		slot_ui.setup(i)
 		slot_ui.slot_pressed.connect(_on_slot_clicked)
+		slot_ui.slot_dropped.connect(_on_slot_dropped) # <--- Connect drop event
 		slot_ui.update_slot(inventory_component.slots[i])
 		_slot_ui_nodes.append(slot_ui)
 
@@ -52,8 +53,12 @@ func _on_slot_clicked(index: int, button_index: int) -> void:
 	if slot.is_empty():
 		return
 
-	## Left click / Tap: Equip item if it's equipment
 	if button_index == MOUSE_BUTTON_LEFT:
 		if equipment_component and slot.item.item_type == ItemData.ItemType.EQUIPMENT:
 			equipment_component.equip(slot.item)
 			print("Equipped: %s" % slot.item.name)
+
+
+func _on_slot_dropped(from_index: int, to_index: int) -> void:
+	if inventory_component:
+		inventory_component.move_slot(from_index, to_index)

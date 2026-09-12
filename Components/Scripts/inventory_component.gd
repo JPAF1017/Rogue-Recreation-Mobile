@@ -28,7 +28,6 @@ func add_item(item: ItemData, amount: int = 1) -> bool:
 
 	var remaining: int = amount
 
-	## 1. Try to stack in existing slots first
 	if item.is_stackable:
 		for i in range(capacity):
 			if slots[i].can_stack_with(item):
@@ -37,7 +36,6 @@ func add_item(item: ItemData, amount: int = 1) -> bool:
 				if remaining <= 0:
 					break
 
-	## 2. Fill empty slots with the remainder
 	if remaining > 0:
 		for i in range(capacity):
 			if slots[i].is_empty():
@@ -114,3 +112,32 @@ func swap_slots(index_a: int, index_b: int) -> void:
 	slot_updated.emit(index_a, slots[index_a])
 	slot_updated.emit(index_b, slots[index_b])
 	inventory_updated.emit()
+
+
+func move_slot(from_index: int, to_index: int) -> void:
+	if from_index == to_index:
+		return
+	if from_index < 0 or from_index >= capacity or to_index < 0 or to_index >= capacity:
+		return
+
+	var source_slot: InventorySlotData = slots[from_index]
+	var dest_slot: InventorySlotData = slots[to_index]
+
+	if source_slot.is_empty():
+		return
+
+	if dest_slot.is_empty():
+		swap_slots(from_index, to_index)
+		return
+
+	if dest_slot.can_stack_with(source_slot.item):
+		var remainder: int = dest_slot.add_quantity(source_slot.quantity)
+		source_slot.quantity = remainder
+		if source_slot.quantity <= 0:
+			source_slot.clear()
+
+		slot_updated.emit(from_index, source_slot)
+		slot_updated.emit(to_index, dest_slot)
+		inventory_updated.emit()
+	else:
+		swap_slots(from_index, to_index)
